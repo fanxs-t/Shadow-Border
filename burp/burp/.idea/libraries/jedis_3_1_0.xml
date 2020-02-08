@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jedis-3.1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../Burpsuit/Plugin/javalib/jedis-3.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

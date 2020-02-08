@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-lg-10 col-md-10">
+                <div class="panel panel-{{vulnerability_severity}}" style="margin-left:20%">
+                    <div class="panel-heading vulnerability-header">Vulnerability</div>
+                    <div class="panel-body">
+                        <button class="btn del-bug-button" onclick="window.location.href='/del?type=singlebug&id={{id}}'">Del</button>
+                        <p class="bug-name">{{vulnerability_name}}</p>
+                        <span class="bug-info-keys">Severity: </span><span class="bug-{{vulnerability_severity}}">{{vulnerability_severity.upper()}}</span><br>
+                        <span class="bug-info-keys">Product:  </span><span>{{vulnerability_product}}</span><br>
+                        <span class="bug-info-keys">Module:   </span><span>{{module_name}}</span><br>
+                        <span class="bug-info-keys">URL:      </span><a href="{{url}}" target="_blank">{% raw url_encode %}</a><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10">
+                <div class="panel panel-default" style="margin-left:20%">
+                    <div class="panel-heading">Extra Info</div>
+                    <div class="panel-body"><textarea class="form-control" rows="5">
+                        {{vulnerability_extra_info}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10">
+                <div class="panel panel-default" style="margin-left:20%">
+                    <div class="panel-heading">Request Packet</div>
+                    <div class="panel-body">
+                    <textarea class="form-control" rows="13">{{packet}}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% end %}

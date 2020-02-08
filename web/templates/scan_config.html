@@ -1,0 +1,37 @@
+{% extends "layout.html" %} 
+{% block content %}
+        <div class="container">
+            <div class="col-md-12">
+                {% if scan_stat %}
+                <button style="width:50%;margin:1% 25% 0 25%" onclick="window.location.href='/scan_stat?stat=False'" class="btn btn-danger btn-lg btn-block"> Stop Shadow Border Scanner </button><br>
+                {% else %}
+                <button style="width:50%;margin:2% 25% 0 25%" onclick="window.location.href='/scan_stat?stat=True'" class="btn btn-success btn-lg btn-block"> Start Shadow Border Scanner </button><br>
+                {% end %}
+                <div class="row">
+                    <form action="" method="post" name="form_sc">
+                        {% for i in all_pocs %}
+                        {% set poc_true = i+"_true" %}
+                        {% set poc_false = i+"_false" %}
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card-box">
+                                <div class="form-inline">
+                                    <label class="form-label config-label">{{i}}</label>
+                                    <label class="checkbox-inline" style="float:right">
+                                        <input type="radio" name="{{i}}" value="false" {{applied_pocs[poc_false]}}> False
+                                    </label>
+                                    <label class="checkbox-inline" style="float:right">
+                                        <input type="radio" name="{{i}}" value="true" {{applied_pocs[poc_true]}}> True
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        {% end %}
+                         <button type="submit" style="width:100%" class="btn btn-danger btn-lg btn-block" onclick="form_sc.action='/scan_config';form_sc.submit()"> Update Config</button>
+                        <br/>
+                        <button style="width:100%" class="btn btn-warning btn-lg btn-block" onclick="form_sc.action='/scan_config?save_default=1';form_sc.submit()"> Save as Default </button>
+                    </form>
+                    <div style="text-align:center"><p>* Updating the config requires to restart the scanner.</p></div>
+                </div>
+            </div>
+        </div>
+{% end %}

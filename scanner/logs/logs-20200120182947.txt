@@ -1,0 +1,1 @@
+[+ 200120 18:29:47] Retrieve one request from 'waiting'.

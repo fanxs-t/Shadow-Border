@@ -1,0 +1,2 @@
+[+ 200120 18:12:22] Build connection with redis
+[+ 200120 18:12:22] Web app start at: http://0.0.0.0:9000

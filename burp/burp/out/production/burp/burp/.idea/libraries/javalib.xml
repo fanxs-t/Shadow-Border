@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="javalib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../Burpsuit/Plugin/javalib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Burpsuit/Plugin/javalib" recursive="false" />
+  </library>
+</component>

@@ -1,0 +1,4 @@
+{
+"sql_injection_detection": "False",
+"xss_detection": "True"
+}

@@ -1,0 +1,70 @@
+[+ 200120 17:44:52] Build connection with redis
+[+ 200120 17:44:52] Web app start at: http://0.0.0.0:9000
+[* 200120 17:44:56] Clear all db data and stop the scanner.
+[+ 200120 18:01:44] Start the scanner.
+[+ 200120 18:01:44] Load custom script: script.xss_detection at D:\Security\Swords\Chaldea\ShadowBorder\script\xss_detection.py
+[+ 200120 18:01:44] Initialize controller...
+[+ 200120 18:01:44] Start the scanner.
+[+ 200120 18:01:44] Initialize the Request Producer.
+[+ 200120 18:01:44] Initialize the Engine.
+[+ 200120 18:01:44] Initialize the Result Parser.
+[+ 200120 18:01:44] Retrieve one request from 'waiting'.
+[* 200120 18:01:44] New task 8a75bff5f64eeab51ac13f6f6e513755.
+[+ 200120 18:01:44] Add new task into the TaskManager 8a75bff5f64eeab51ac13f6f6e513755
+[+ 200120 18:01:44] Adding new scan for https://ad.wappalyzer.com:443/log/wp/
+[+ 200120 18:01:44] Retrieve one request from 'waiting'.
+[* 200120 18:01:44] New task 7554697de81997581ca6e5bcfc850cd6.
+[+ 200120 18:01:44] Add new task into the TaskManager 7554697de81997581ca6e5bcfc850cd6
+[+ 200120 18:01:44] Adding new scan for http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=123
+[+ 200120 18:01:44] Retrieve one request from 'waiting'.
+[* 200120 18:01:44] New task 3b681892c02615a4c55633b999f4f8dc.
+[+ 200120 18:01:44] Add new task into the TaskManager 3b681892c02615a4c55633b999f4f8dc
+[+ 200120 18:01:44] Adding new scan for http://127.0.0.1:80/dvwa/vulnerabilities/sqli/?name=123&Submit=Submit
+[+ 200120 18:01:44] Retrieve one request from 'waiting'.
+[* 200120 18:01:44] Request Filtered.Filename Extension js in the blacklist
+[* 200120 18:01:47] Start poc: script.xss_detection at https://ad.wappalyzer.com:443/log/wp/
+[* 200120 18:01:47] Start poc: script.xss_detection at http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=123
+[* 200120 18:01:47] Start poc: script.xss_detection at http://127.0.0.1:80/dvwa/vulnerabilities/sqli/?name=123&Submit=Submit
+[+ 200120 18:01:47] Finish poc: script.xss_detection at http://127.0.0.1:80/dvwa/vulnerabilities/sqli/?name=123&Submit=Submit
+[+ 200120 18:01:47] Finish poc: script.xss_detection at http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=123
+[* 200120 18:01:48] Update task 3b681892c02615a4c55633b999f4f8dc scanning status: script.xss_detection, FINISHED.
+[* 200120 18:01:48] Finish Task with id 3b681892c02615a4c55633b999f4f8dc
+[* 200120 18:01:48] Update task 7554697de81997581ca6e5bcfc850cd6 scanning status: script.xss_detection, FINISHED.
+[* 200120 18:01:48] Finish Task with id 7554697de81997581ca6e5bcfc850cd6
+[+ 200120 18:01:50] Finish poc: script.xss_detection at https://ad.wappalyzer.com:443/log/wp/
+[* 200120 18:01:50] Update task 8a75bff5f64eeab51ac13f6f6e513755 scanning status: script.xss_detection, FINISHED.
+[* 200120 18:01:50] Finish Task with id 8a75bff5f64eeab51ac13f6f6e513755
+[+ 200120 18:02:27] Retrieve one request from 'waiting'.
+[* 200120 18:02:27] New task 2e968a4c82f4b5d31d3484879e467e5f.
+[+ 200120 18:02:27] Add new task into the TaskManager 2e968a4c82f4b5d31d3484879e467e5f
+[+ 200120 18:02:27] Adding new scan for https://ccleanr.net:443/api/config/?id=lbpddeimojmbpkbfckjpnbpehgnbpnnl&version=1.3.2&lt=1250005412&uid=1cfd30a1-c31d-2fb8-2fac-7694224085bd&r=1579514547404
+[* 200120 18:02:27] Start poc: script.xss_detection at https://ccleanr.net:443/api/config/?id=lbpddeimojmbpkbfckjpnbpehgnbpnnl&version=1.3.2&lt=1250005412&uid=1cfd30a1-c31d-2fb8-2fac-7694224085bd&r=1579514547404
+[+ 200120 18:02:31] Finish poc: script.xss_detection at https://ccleanr.net:443/api/config/?id=lbpddeimojmbpkbfckjpnbpehgnbpnnl&version=1.3.2&lt=1250005412&uid=1cfd30a1-c31d-2fb8-2fac-7694224085bd&r=1579514547404
+[* 200120 18:02:32] Update task 2e968a4c82f4b5d31d3484879e467e5f scanning status: script.xss_detection, FINISHED.
+[* 200120 18:02:32] Finish Task with id 2e968a4c82f4b5d31d3484879e467e5f
+[- 200120 18:02:32] Error in Executing the script.xss_detection poc for URL https://ccleanr.net:443/api/config/?id=lbpddeimojmbpkbfckjpnbpehgnbpnnl&version=1.3.2&lt=1250005412&uid=1cfd30a1-c31d-2fb8-2fac-7694224085bd&r=1579514547404. Error Message is [get_charset]HTTPSConnectionPool(host='ccleanr.net', port=443): Max retries exceeded with url: /api/config/?id=lbpddeimojmbpkbfckjpnbpehgnbpnnl&version=1.3.2&lt=1250005412&uid=1cfd30a1-c31d-2fb8-2fac-7694224085bd&r=1579514547404 (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+
+[* 200120 18:03:44] Clear all db data and stop the scanner.
+[+ 200120 18:03:57] Start the scanner.
+[+ 200120 18:03:57] Load custom script: script.xss_detection at D:\Security\Swords\Chaldea\ShadowBorder\script\xss_detection.py
+[+ 200120 18:03:57] Initialize controller...
+[+ 200120 18:03:57] Start the scanner.
+[+ 200120 18:03:57] Initialize the Request Producer.
+[+ 200120 18:03:57] Initialize the Engine.
+[+ 200120 18:03:57] Initialize the Result Parser.
+[+ 200120 18:03:57] Retrieve one request from 'waiting'.
+[* 200120 18:03:57] New task 7554697de81997581ca6e5bcfc850cd6.
+[+ 200120 18:03:57] Add new task into the TaskManager 7554697de81997581ca6e5bcfc850cd6
+[+ 200120 18:03:57] Adding new scan for http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=<script>Aler`1`<123
+[* 200120 18:04:00] Start poc: script.xss_detection at http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=<script>Aler`1`<123
+[+ 200120 18:04:00] Finish poc: script.xss_detection at http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=<script>Aler`1`<123
+[* 200120 18:04:01] Update task 7554697de81997581ca6e5bcfc850cd6 scanning status: script.xss_detection, FINISHED.
+[* 200120 18:04:01] Finish Task with id 7554697de81997581ca6e5bcfc850cd6
+[+ 200120 18:04:35] Retrieve one request from 'waiting'.
+[* 200120 18:04:35] New task 2e968a4c82f4b5d31d3484879e467e5f.
+[+ 200120 18:04:35] Add new task into the TaskManager 2e968a4c82f4b5d31d3484879e467e5f
+[+ 200120 18:04:35] Adding new scan for https://ccleanr.net:443/api/config/?id=lbpddeimojmbpkbfckjpnbpehgnbpnnl&version=1.3.2&lt=1250005412&uid=1cfd30a1-c31d-2fb8-2fac-7694224085bd&r=1579514547404
+[* 200120 18:04:35] Start poc: script.xss_detection at https://ccleanr.net:443/api/config/?id=lbpddeimojmbpkbfckjpnbpehgnbpnnl&version=1.3.2&lt=1250005412&uid=1cfd30a1-c31d-2fb8-2fac-7694224085bd&r=1579514547404
+[+ 200120 18:04:37] Finish poc: script.xss_detection at https://ccleanr.net:443/api/config/?id=lbpddeimojmbpkbfckjpnbpehgnbpnnl&version=1.3.2&lt=1250005412&uid=1cfd30a1-c31d-2fb8-2fac-7694224085bd&r=1579514547404
+[* 200120 18:04:37] Update task 2e968a4c82f4b5d31d3484879e467e5f scanning status: script.xss_detection, FINISHED.
+[* 200120 18:04:37] Finish Task with id 2e968a4c82f4b5d31d3484879e467e5f

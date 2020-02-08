@@ -1,0 +1,19 @@
+[+ 200120 18:37:32] Build connection with redis
+[+ 200120 18:37:32] Web app start at: http://0.0.0.0:9000
+[* 200120 18:37:34] Clear all db data and stop the scanner.
+[+ 200120 18:37:50] Start the scanner.
+[+ 200120 18:37:50] Load custom script: script.xss_detection at D:\Security\Swords\Chaldea\ShadowBorder\script\xss_detection.py
+[+ 200120 18:37:50] Initialize controller...
+[+ 200120 18:37:50] Start the scanner.
+[+ 200120 18:37:50] Initialize the Request Producer.
+[+ 200120 18:37:50] Initialize the Engine.
+[+ 200120 18:37:50] Initialize the Result Parser.
+[+ 200120 18:37:50] Retrieve one request from 'waiting'.
+[* 200120 18:37:50] New task 7554697de81997581ca6e5bcfc850cd6.
+[+ 200120 18:37:50] Add new task into the TaskManager 7554697de81997581ca6e5bcfc850cd6
+[+ 200120 18:37:50] Adding new scan for http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=duck8bi
+[* 200120 18:37:53] Start poc: script.xss_detection at http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=duck8bi
+[+ 200120 18:37:53] Finish poc: script.xss_detection at http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=duck8bi
+[* 200120 18:37:54] Update task 7554697de81997581ca6e5bcfc850cd6 scanning status: script.xss_detection, FINISHED.
+[* 200120 18:37:54] Finish Task with id 7554697de81997581ca6e5bcfc850cd6
+[+ 200120 18:37:54] Disclose a vulnerability Cross Site Script (XSS) at http://127.0.0.1:80/dvwa/vulnerabilities/xss_r/?keyword=duck8bi

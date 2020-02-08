@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-lg-10 col-md-10">
+                <div class="panel panel-success" style="margin-left:20%">
+                    <div class="panel-heading">Request URL</div>
+                    <div class="panel-body">
+                    <textarea class="form-control" style="color:#3384c3 !important;min-height:10px;" rows="1">{{url}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10">
+                <div class="panel panel-default" style="margin-left:20%">
+                    <div class="panel-heading">Request Packet</div>
+                    <div class="panel-body">
+                    <textarea class="form-control" rows="13">{{packet}}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% end %}
