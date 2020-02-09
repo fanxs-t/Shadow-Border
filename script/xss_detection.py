@@ -305,7 +305,7 @@ class XssScan(object):
 
     def single_payload_verify(self, test, location, payload):
         """ """
-        test_args = dict()
+        # Get parameter set
         if test[0] == "params":
             params = self.params_dict.copy()
             params[test[1]] = payload
@@ -322,6 +322,7 @@ class XssScan(object):
             json = json_object.json
             params = self.params_dict
             data = self.data_dict
+
         try:
             r = requests.request(self.method, self.pure_url, headers=self.headers, params=params, data=data, json=json, timeout=3, verify=False)
             html = r.text
@@ -334,64 +335,53 @@ class XssScan(object):
                          "betweenXmp", "betweenIframe", "betweenNoscript", "betweenNoframes",
                          "betweenPlaintext")
                 and soup.findAll(keyword) and self.confirm_parent_tag(soup)):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+            return self.return_true(payload, test[1])
 
         if (location == "betweenScript" and (soup.findAll(keyword)
-                                             or soup.findAll(name="script", text=re.compile(
-                    r"[^\\]%s" % payload.replace("(", "\(").replace(")", "\)")))
-        )
-        ):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+            or soup.findAll(name="script", text=re.compile(r"[^\\]%s" % payload.replace("(", "\(").replace(")", "\)")))
+        )):
+            return self.return_true(payload, test[1])
 
         if (location == "betweenScript" and self.enc == "gbk" and
                 soup.findAll(name="script", text=re.compile(r"\\%s" % payload.replace("(", "\(").replace(")", "\)")))
         ):
-            self.result.append(
-                "[GBK] Payload : %s\nParams : " % payload + test[1])
+            return self.return_true(payload, test[1])
 
         if (location == "betweenStyle" and (soup.findAll(keyword) or
-                                            soup.findAll(name="style", text=re.compile(
-                                                "%s" % payload.replace(".", "\.").replace("(", "\(").replace(")",
-                                                                                                             "\)")))
-        )
-        ):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+            soup.findAll(name="style", text=re.compile("%s" % payload.replace(".", "\.").replace("(", "\(").replace(")","\)")))
+        )):
+            return self.return_true(payload, test[1])
 
-        if (location == "inMetaRefresh" and soup.findAll(name="meta", attrs={"http-equiv": "Refresh",
-                                                                             "content": re.compile(payload)})):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+        if (location == "inMetaRefresh" and soup.findAll(name="meta", attrs={"http-equiv": "Refresh", "content": re.compile(payload)})):
+            return self.return_true(payload, test[1])
 
         if location == "utf-7" and html.startswith("+/v8 +ADw-duck8bi+AD4-"):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+            return self.return_true(payload, test[1])
 
         if (location == "inCommonAttr" and (soup.findAll(keyword) or
                                             soup.findAll(attrs={keyword: re.compile("x55")}))
         ):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+            return self.return_true(payload, test[1])
 
         if (location == "inSrcHrefAction" and (soup.findAll(attrs={"src": re.compile("%s" % payload)})
                                                or soup.findAll(attrs={"href": re.compile("%s" % payload)})
                                                or soup.findAll(attrs={"action": re.compile("%s" % payload)}))
         ):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+            return self.return_true(payload, test[1])
 
         if (location == "inScript" and self.confirm_in_script(soup, payload)):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+            return self.return_true(payload, test[1])
 
         if (location == "inStyle" and
                 soup.findAll(attrs={
                     "style": re.compile("%s" % payload.replace(".", "\.").replace("(", "\(").replace(")", "\)"))})
         ):
-            self.result.append(
-                "Payload : %s\nParams : " % payload + test[1])
+            return self.return_true(payload, test[1])
+
+    # handle result
+    def return_true(payload, data):
+        self.result.append("Payload : %s\nParams : " % payload + data)
+        return
 
     def vul_verify(self, test, location):
         """ """
